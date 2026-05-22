@@ -1,15 +1,15 @@
 # Origin coordinates of the map
 origin:
   coordinates:
-    latitude:   43.70668436597731
-    longitude:  10.475651060240478
+    latitude:   43.7062829
+    longitude:  10.4750928
     depth:      0.0
 
 zeno:
   # Zeno initial pose w.r.t the fixed frame
   init_pose:
-    north:    10.0    # m
-    east:     1.0     # m
+    north:    8.0    # m
+    east:     40.0     # m
     depth:    0.0     # m
     yaw:      0.0     # deg
 

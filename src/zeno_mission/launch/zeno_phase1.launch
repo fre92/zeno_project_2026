@@ -1,0 +1,15 @@
+<launch>
+
+    <rosparam command="load" file="$(find zeno_mission)/config/waypoints_phase1.yaml" />
+    <rosparam command="load" file="$(find zeno_mission)/config/region_params.yaml" />
+
+
+
+    <!-- lancia controllore -->
+    <node pkg="zeno_mission" type="phase1_pure_pursuit_controller.py" name="phase1_pure_pursuit_controller" output="screen"/>
+
+     <!-- lancia plot -->
+    <node pkg="zeno_mission" type="phase1_plot.py" name="phase1_plot" output="screen"/>
+   
+
+</launch>
