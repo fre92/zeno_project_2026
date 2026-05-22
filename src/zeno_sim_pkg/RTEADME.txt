@@ -1,0 +1,55 @@
+La missione è arganizzata in 3 fasi
+
+-------------------------------------------- FASE 0 --------------------------------------------
+In questa fase si ricevono in un file di testo <<safezone.txt>> i vertici della regione
+
+Il primo nodo "polygon_ini" implementato nel file phase0_polygon_ini.py legge questi vertici, definisce l'origine del sistema 
+NED e costruisce il poligono.
+A partire da questo primo poligono costruisce un più piccolo poligono di sicurezza.
+I parametri calcolati, quali vertici dei due poligoni e origine vengono salvati in un file di configurazione <<region_params.yaml>>
+Infine viene mostrata un'immagine dei due poligoni, tale img viene poi salvata nella cartella 'img'
+In questo caso pertanto è sufficiente runnare il nodo: 
+
+                    rosrun zeno_mission phase0_polygon_ini.py 
+
+Il secondo nodo "coverage_planner" implementato nel file phase0_coverage_planner.py recupera i vertici del poligono di sicurezza e calcola 
+i waypoint, ovvero i punti di inizio e fine dei transetti che Zeno dovrà percorrere per mappare l'area di interesse (vi è la possibilità di 
+scegliere quanto lontano dal bordo fare il primo e l'ultimo transetto e quanto spazio lasciare tra i transetti intermedi, valore che poi può 
+esser modificato al fine di fare i transetti intermedi tutti equidistanziati)
+I waypoint calcolati vengono poi salvati in un file di configurazione <<waypoint_phase1.yaml>>.
+Viene infine mostrata un immagine del poligono di sicurezza e dei waypoint ed un possibile (non è detto sia quello ) percorso che zeno dovrà seguire 
+In questo caso pertanto bisogna lanciare il tutto con il seguente comando: 
+
+                    roslaunch zeno_mission zeno_phase0.launch 
+
+-------------------------------------------- FASE 1 --------------------------------------------
+In questa fase avviene la missione vera e propria.
+
+Il noso phase1_pure_pursuit_controller recupera i waypoint e i parametri della regione dal server, e nell'rodine :
+    - Ordina i waypoint in modo da percorrere la traiettoria nel miglior modo, si parte dal wp disponibile più vicino 
+    - parte il controllo vero e propio 
+A terminale vengono mostrati solo eventuali errori o messaggi di inizio e fine. 
+A tal scopo è stato creato un log: il controllo pubblica continuamente sul topic /phase1/telemetry lo stato di controllo: 
+                data: "WP: 1/7 | Dist: 11.81m | X-Track: -0.02m | Surge: 0.20 | YawErr: -0.6 deg"
+oltre a ciò viene creato e salvato a fine missione (anche se la missione dovessi inerrompersi) un file log che è possibile trovare 
+all'interno della cartella 'logs' (ongi file creato ad un identificativo diverso, pertanto vengono slavati tutti è quindi compito di chi 
+ha lanciato la missione decide se tenerlo o meno, ed eventualmente è desiderato rinominarlo e aggiungere alla fine del testo un commento 
+su come  andata la missione e si vi sono stati problemi).
+Inoltre a schermo viene mostrata un animazione dove è possibile vedere, quasi in tempo reale, zeno che si muove nella regione di interesse e
+raggiunge i waypoint indicati.
+In questa caso bisogna lanciare il tutto con i seguenti comandi (appurandosi che le fasi precedenti sia effettivamente state fatte, altrimenti 
+i paramettri potrebbero risultare vuoti, in tal caso verrà segnalata un errore, oppure potranno essere presenti parametri vecchi): 
+
+    Si lancia la simulazione di zeno ( scegliendo nel file di configurazione la posizione iniziale): 
+                    roslaunch zeno_sim_pkg zeno.launch 
+                    
+    Si lancia il controllore: 
+                    roslaunch zeno_mission zeno_phase1.launch
+
+
+
+
+
+
+
+

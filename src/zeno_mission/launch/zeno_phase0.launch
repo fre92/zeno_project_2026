@@ -5,7 +5,7 @@
 
 
     <!-- lancia il nodo che plotta -->
-    <node pkg="zeno_mission" type="coverage_planner.py" name="coverage_planner" output="screen"/>
+    <node pkg="zeno_mission" type="phase0_coverage_planner.py" name="coverage_planner" output="screen"/>
 
 
 </launch>

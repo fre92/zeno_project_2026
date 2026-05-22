@@ -8,8 +8,8 @@ origin:
 zeno:
   # Zeno initial pose w.r.t the fixed frame
   init_pose:
-    north:    8.0    # m
-    east:     40.0     # m
+    north:    45.0    # m
+    east:     45.0     # m
     depth:    0.0     # m
     yaw:      0.0     # deg
 

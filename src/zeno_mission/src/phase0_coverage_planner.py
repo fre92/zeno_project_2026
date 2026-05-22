@@ -52,10 +52,8 @@ def rotate_polygon(polygon, angle):
     return np.array(rotated)
 
 def intersect_horizontal_line_convex_poly(y_level, polygon):
-    """
-    Trova i punti di intersezione (sinistro e destro) di una linea orizzontale
-    con un poligono convesso.
-    """
+    # Trova i punti di intersezione (sinistro e destro)
+    
     intersections_x = []
     n_v = len(polygon)
     
