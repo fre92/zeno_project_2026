@@ -119,7 +119,7 @@ def save_params_to_yaml(origin_ll, poly_orig, poly_rest):
     try:
         
         rospack = rospkg.RosPack()
-        pkg_path = rospack.get_path('zeno_python') 
+        pkg_path = rospack.get_path('zeno_mission') 
         
         file_path = os.path.join(pkg_path, 'config', 'region_params.yaml')
 
@@ -134,17 +134,17 @@ def save_params_to_yaml(origin_ll, poly_orig, poly_rest):
             
             # Scrittura dei vertici dei poligoni rispetto al fixed frame (NED)
             f.write("# vertici poligono w.r.t the fixed frame\n")
-            f.write("vertici_poligono:\n") 
+            f.write("polygon_vertices:\n") 
             
             # Poligono Originario
-            f.write("  originario:\n")
+            f.write("  original:\n")
             for wp in poly_orig:
                 f.write("    - [{:.3f}, {:.3f}]\n".format(wp[0], wp[1]))
                 
             f.write("\n")
             
             # Poligono Ristretto
-            f.write("  ristretto:\n")
+            f.write("  restricted:\n")
             for wp in poly_rest:
                 f.write("    - [{:.3f}, {:.3f}]\n".format(wp[0], wp[1]))
 
@@ -198,7 +198,15 @@ if __name__ == "__main__":
         plt.grid(True, linestyle=':', alpha=0.6)
         plt.axis('equal')
         plt.legend()
+        rospack = rospkg.RosPack()
+        pkg_path = rospack.get_path('zeno_mission') 
+        image_path = os.path.join(pkg_path, 'img', 'polygon_ini_debug.png')
+        plt.savefig(image_path, dpi=300, bbox_inches='tight')
+        rospy.loginfo("Grafico di debug salvato in: %s", image_path)
+
         plt.show()
+
+        
         
     except Exception as e:
         rospy.logerr("Errore di esecuzione: %s", str(e))

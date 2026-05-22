@@ -1,0 +1,11 @@
+<launch>
+
+    <rosparam command="load" file="$(find zeno_mission)/config/region_params.yaml" />
+
+
+
+    <!-- lancia il nodo che plotta -->
+    <node pkg="zeno_mission" type="coverage_planner.py" name="coverage_planner" output="screen"/>
+
+
+</launch>
