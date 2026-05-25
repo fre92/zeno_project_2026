@@ -6,14 +6,15 @@ import heapq
 import numpy as np
 import matplotlib.path as mpltPath
 import time
-
+import json
+from datetime import datetime
 
 
 # Importiamo i messaggi standard e custom
 from geometry_msgs.msg import Point
 # Controlla che ci sia questa riga esatta in cima al file:
 from marta_msgs.msg import NavStatus
-from zeno_python.msg import WaypointPath
+from zeno_mission.msg import WaypointPath
 from geodetic_functions import ll2ne
 from itertools import permutations
 
@@ -243,17 +244,60 @@ def main():
 
     poly_ned = []
     # =========================================================
-    # 3. Lettura Poligono da YAML e conversione in NED
+    # 3. Lettura Poligoni (GIÀ IN NED) e Geofencing
     # =========================================================
+    poly_original_ned = []
+    poly_restricted_ned = []
+    
+    # 3a. Lettura Poligono Originale in metri
     try:
-        # I vertici nel file YAML ora sono in GPS [Lat, Lon]
-        poly_ned = rospy.get_param("/polygon_vertices/restricted")
-        
-        rospy.loginfo("Poligono caricato e convertito in NED con successo.")
+        poly_original_ned = rospy.get_param("/polygon_vertices/original")
     except KeyError:
-        poly_ned = []
-        rospy.logwarn("Parametro /polygon_vertices/original non trovato. Zeno navigherà senza confini!")
+        rospy.logwarn("Parametro /polygon_vertices/original non trovato.")
 
+    # 3b. Lettura Poligono Ristretto in metri
+    try:
+        poly_restricted_ned = rospy.get_param("/polygon_vertices/restricted")
+    except KeyError:
+        rospy.logwarn("Parametro /polygon_vertices/restricted non trovato.")
+
+    # 3c. Logica decisionale: Controllo Target e Scelta Poligono
+    if poly_original_ned and poly_restricted_ned and targets_ned:
+        path_orig = mpltPath.Path(poly_original_ned)
+        path_restr = mpltPath.Path(poly_restricted_ned)
+
+        valid_targets = []
+        usa_originale = False
+
+        for i, t in enumerate(targets_ned):
+            # t[0]=Nord, t[1]=Est
+            in_restr = path_restr.contains_point((t[0], t[1]))
+            in_orig = path_orig.contains_point((t[0], t[1]))
+
+            if in_restr:
+                valid_targets.append(t)
+            elif in_orig:
+                valid_targets.append(t)
+                usa_originale = True
+                rospy.loginfo("Il Target %d richiede l'estensione dell'area (fuori dal ristretto, dentro originale).", i+1)
+            else:
+                rospy.logerr("ATTENZIONE: Il Target %d è FUORI dall'area di gara! SCARTATO per sicurezza.", i+1)
+
+        # Sovrascriviamo la lista dei target ignorando quelli scartati
+        targets_ned = valid_targets
+
+        # Scegliamo quale maschera passare alla creazione della griglia
+        if usa_originale:
+            poly_ned = poly_original_ned
+            rospy.loginfo("Area di navigazione impostata su: ORIGINALE (Massima estensione).")
+        else:
+            poly_ned = poly_restricted_ned
+            rospy.loginfo("Area di navigazione impostata su: RISTRETTA (Tutti i target in comfort zone).")
+
+    else:
+        # Fallback se manca un poligono
+        poly_ned = poly_restricted_ned if poly_restricted_ned else poly_original_ned
+        rospy.logwarn("Geofencing disabilitato: Manca uno dei poligoni o non ci sono target validi.")
 # 4. Acquisizione Posizione Reale di Zeno dal Topic GPS
     rospy.loginfo("In attesa della posizione attuale di Zeno su /nav_status...")
     try:
@@ -352,10 +396,38 @@ def main():
             
         waypoint_pub.publish(msg)
         rospy.loginfo("Missione Calcolata! {} waypoint pubblicati.".format(len(full_path_ned)))
+        # =========================================================
+        # SALVATAGGIO
+        # =========================================================
+
+        # Recupero in modo sicuro la variabile (evita errori se non ci sono target)
+        usa_orig_sicuro = locals().get('usa_originale', False)
+
+        # Creiamo un dizionario con tutto lo storico della missione
+        mission_log = {
+            "timestamp": datetime.now().strftime("%Y-%m-%d_%H-%M-%S"),
+            "area_utilizzata": "Originale" if usa_orig_sicuro else "Ristretta",
+            "target_validi_iniziali": targets_ned,     # <--- L'ORDINE ORIGINALE (Pre-TSP)
+            "target_ordinati": ordered_targets,        # <--- L'ORDINE OTTIMIZZATO (Post-TSP)
+            "distanza_stimata_m": real_dist,
+            "tempo_calcolo_tsp_s": tempo_impiegato,
+            "waypoint_totali": len(full_path_ned),
+            "path": full_path_ned
+        }
+        # Salviamo su file
+        nome_file = "/media/sf_ros_condivisa/mission_log_{}.json".format(mission_log["timestamp"])
+        with open(nome_file, 'w') as f:
+            json.dump(mission_log, f, indent=4)
+            
+        rospy.loginfo("Log di missione salvato in: %s", nome_file)
+        
+        # =========================================================
+        # ORA METTIAMO IN PAUSA IL NODO
+        # =========================================================
         rospy.sleep(1.0)
         rospy.loginfo("Planner in pausa. Tengo vivo il topic /waypoint_path...")
         rospy.spin()  # <--- QUESTA RIGA EVITA CHE IL NODO MUOIA
-
+        
 if __name__ == '__main__':
     try:
         main()

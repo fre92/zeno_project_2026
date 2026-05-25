@@ -1,7 +1,6 @@
 obstacles:
-- [5 , 0 , 2.5] # [North, East, Radius]
-- [-1 , 7.5 , 2.5]
-- [22, 10, 2.5]
-- [5, -15, 2.5]
-- [-3, -18, 2.5]
-- [14, -27, 2.5]
+- [43.7064809, 10.4752169, 2.5]  # Tubo 3 (NED: 22, 10)     - DENTRO (Area ristretta e originale)
+# --- Ostacoli EXTRA validi all'interno della Safezone ristretta ---
+- [43.7065079, 10.4752945, 2.5]  # Tubo Extra A (NED: 25, 16) - Vicino al centro
+- [43.7065978, 10.4754366, 2.5]  # Tubo Extra B (NED: 35, 28) - Spostato a Nord-Est
+- [43.7064089, 10.4756024, 2.5]  # Tubo Extra C (NED: 14, 41) - Zona Sud-Est

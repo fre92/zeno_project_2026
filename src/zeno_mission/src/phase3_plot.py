@@ -4,10 +4,13 @@
 import rospy
 import matplotlib.pyplot as plt
 from marta_msgs.msg import NavStatus
-from zeno_python.msg import WaypointPath
+from zeno_mission.msg import WaypointPath
 from geodetic_functions import ll2ne
 from matplotlib.patches import Circle
 import threading
+import matplotlib.path as mpltPath
+import json
+from datetime import datetime
 
 # --- Variabili Globali ---
 xs = []
@@ -49,17 +52,6 @@ def listener():
 
     # 2. Lettura Targets (in GPS) e conversione in NED
     target_ns, target_es = [], []
-    try:
-        targets_gps = rospy.get_param("/targets")
-        for t in targets_gps:
-            lat = t[0]
-            lon = t[1]
-            n, e = ll2ne(origin, (lat, lon))
-            target_ns.append(n)
-            target_es.append(e)
-    except KeyError:
-        rospy.logwarn("Parametro /targets non trovato.")
-
     # 3. Lettura Ostacoli (in GPS) e conversione in NED
     obstacles = []
     try:
@@ -73,24 +65,67 @@ def listener():
     except KeyError:
         rospy.logwarn("Parametro /obstacles non trovato.")
 
-# =========================================================
-    # 4. Lettura Poligono da YAML (region_params.yaml)
     # =========================================================
+    # 2 & 4. Lettura Poligoni (NED), Target (GPS->NED) e Geofencing
+    # =========================================================
+    poly_original_ned = []
+    poly_restricted_ned = []
+    raw_targets_ned = []
+    target_ns, target_es = [], []
     poly_n, poly_e = [], []
-    try:
-        poly_ned = rospy.get_param("/polygon_vertices/restricted")
-        for p in poly_ned:
-            poly_n.append(p[0])
-            poly_e.append(p[1])
 
-        # Chiudiamo il perimetro unendo l'ultimo punto al primo
-        if len(poly_n) > 0:
-            poly_n.append(poly_n[0])
-            poly_e.append(poly_e[0])
-            rospy.loginfo("Poligono caricato e convertito in NED con successo.")
-            
+    # A. Carichiamo entrambi i poligoni (GIÀ IN NED)
+    try:
+        poly_original_ned = rospy.get_param("/polygon_vertices/original")
     except KeyError:
         rospy.logwarn("Parametro /polygon_vertices/original non trovato.")
+
+    try:
+        poly_restricted_ned = rospy.get_param("/polygon_vertices/restricted")
+    except KeyError:
+        rospy.logwarn("Parametro /polygon_vertices/restricted non trovato.")
+
+    # B. Carichiamo tutti i target "grezzi" (convertendoli da GPS a NED)
+    try:
+        for t in rospy.get_param("/targets"):
+            n, e = ll2ne(origin, (t[0], t[1]))
+            raw_targets_ned.append([n, e])
+    except KeyError:
+        rospy.logwarn("Parametro /targets non trovato.")
+
+    # C. Applichiamo la stessa logica decisionale del planner
+    if poly_original_ned and poly_restricted_ned and raw_targets_ned:
+        path_orig = mpltPath.Path(poly_original_ned)
+        path_restr = mpltPath.Path(poly_restricted_ned)
+        usa_originale = False
+
+        for t in raw_targets_ned:
+            in_restr = path_restr.contains_point((t[0], t[1]))
+            in_orig = path_orig.contains_point((t[0], t[1]))
+
+            if in_restr:
+                target_ns.append(t[0])
+                target_es.append(t[1])
+            elif in_orig:
+                target_ns.append(t[0])
+                target_es.append(t[1])
+                usa_originale = True
+                
+        # Scegliamo la linea da disegnare
+        poly_to_draw = poly_original_ned if usa_originale else poly_restricted_ned
+    else:
+        # Fallback se mancano pezzi
+        poly_to_draw = poly_restricted_ned if poly_restricted_ned else poly_original_ned
+        for t in raw_targets_ned:
+            target_ns.append(t[0])
+            target_es.append(t[1])
+
+    # D. Prepariamo le liste per Matplotlib (e chiudiamo il perimetro)
+    if poly_to_draw and len(poly_to_draw) > 0:
+        poly_n = [p[0] for p in poly_to_draw]
+        poly_e = [p[1] for p in poly_to_draw]
+        poly_n.append(poly_n[0])
+        poly_e.append(poly_e[0])
 
 
     # Iscrizione ai Topic
@@ -176,6 +211,28 @@ def listener():
 
         plt.pause(0.05)
         rate.sleep()
+
+    rospy.loginfo("Chiusura Plotter. Salvataggio dati e immagine in corso...")
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    
+    # 1. Salva l'immagine del grafico finale in alta risoluzione
+    percorso_img = "/media/sf_ros_condivisa/mappa_finale_{}.png".format(timestamp)
+    fig.savefig(percorso_img, dpi=300, bbox_inches='tight')
+    rospy.loginfo("Mappa salvata in: %s", percorso_img)
+
+    # 2. Salva la traiettoria reale (le liste xs e ys)
+    with lock:
+        dati_reali = {
+            "timestamp": timestamp,
+            "x_reali_ned": xs,
+            "y_reali_ned": ys
+        }
+        
+    percorso_json = "/media/sf_ros_condivisa/traiettoria_reale_{}.json".format(timestamp)
+    with open(percorso_json, 'w') as f:
+        json.dump(dati_reali, f, indent=4)
+        
+    rospy.loginfo("Traiettoria reale salvata in: %s", percorso_json)
 
 if __name__ == "__main__":
     try:

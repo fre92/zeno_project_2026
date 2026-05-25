@@ -9,7 +9,7 @@ from marta_msgs.msg import NavStatus
 from joystick_command.msg import Rel_error_joystick
 from geodetic_functions import ll2ne
 
-from zeno_python.msg import WaypointPath
+from zeno_mission.msg import WaypointPath
 
 
 class WPController:
