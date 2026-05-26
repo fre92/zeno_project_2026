@@ -1,0 +1,12 @@
+# Ignora le cartelle di compilazione locali di ROS
+build/
+devel/
+logs/
+
+# Ignora i file temporanei di Python
+*.pyc
+__pycache__/
+
+# Ignora i file di configurazione locali di VS Code o della VM
+.vscode/
+.DS_Store

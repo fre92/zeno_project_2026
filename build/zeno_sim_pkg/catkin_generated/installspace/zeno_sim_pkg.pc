@@ -1,8 +1,0 @@
-prefix=/home/student/catkin_ws/install
-
-Name: zeno_sim_pkg
-Description: Description of zeno_sim_pkg
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: geometry_msgs joystick_command marta_msgs nav_msgs rospy

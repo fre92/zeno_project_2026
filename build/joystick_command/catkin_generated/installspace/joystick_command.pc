@@ -1,8 +1,0 @@
-prefix=/home/student/catkin_ws/install
-
-Name: joystick_command
-Description: Description of joystick_command
-Version: 0.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib 
-Requires: roscpp rospy sensor_msgs std_msgs message_runtime

@@ -1,8 +1,0 @@
-prefix=/home/student/catkin_ws/install
-
-Name: marta_msgs
-Description: Description of marta_msgs
-Version: 0.1.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib 
-Requires: 
