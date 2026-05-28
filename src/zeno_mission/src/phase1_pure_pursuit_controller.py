@@ -64,11 +64,16 @@ class Phase1Controller:
         self.max_heading_deg = 45.0
         self.distance_gain = 2.0 #parametro per quando inziare a ridurrre la velocità
 
+        # Parametri comunicazione con SSS
+        self.sss_margin = 2.0  # [m] Raggio della bolla di spegnimento
+        self.sss_state = "OFF" # Stato iniziale
+
         # ROS I/O
         self.joystic_pub = rospy.Publisher("/relative_error", Rel_error_joystick, queue_size=1)
         rospy.Subscriber("/nav_status", NavStatus, self.nav_callback)
 
         self.telemetry_pub = rospy.Publisher("/phase1/telemetry", String, queue_size=1)
+        self.sss_pub = rospy.Publisher("/phase1/SSS", String, queue_size=1)
 
         # Setup cartella logs
         rospack = rospkg.RosPack()
@@ -260,6 +265,26 @@ class Phase1Controller:
         # Distanza da fine segmento
         dist = math.sqrt((wp_end_n - current_n)**2 + (wp_end_e - current_e)**2)
         #rospy.loginfo_throttle(1.0, "Distanza al WP %d: %.2f m", self.current_wp_idx + 1, dist)
+
+
+        # Accensione/Spegnimento side scan sonar 
+        # ist da wp precedente 
+        dist_from_start = math.sqrt((current_n - wp_start_n)**2 + (current_e - wp_start_e)**2)
+
+        # Se in ingresso/uscita curva OFF , altrimenti ON 
+        if dist < self.sss_margin or dist_from_start < self.sss_margin:
+            new_sss_state = "OFF"
+        else:
+            new_sss_state = "ON"
+
+        # Avviso stato cambiato
+        if new_sss_state != self.sss_state:
+            rospy.loginfo("Comando SSS -> %s (Dist. Inizio: %.1fm | Dist. Fine: %.1fm)", new_sss_state, dist_from_start, dist)
+            self.sss_state = new_sss_state
+        
+        # Pubblicazione su topic  (pubblichiamo il comando in continuo a 10Hz )
+        self.sss_pub.publish(String(data=self.sss_state))
+
 
         # Transizione Waypoint
         if dist < self.position_th or t >= 1.0:
