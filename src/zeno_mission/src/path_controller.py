@@ -230,12 +230,16 @@ class WPController:
         for i in range(look_ahead_range):
             wp = self.waypoints[self.current_wp_idx + i]
             # wp e' una riga di NumPy: [North, East, z_flag]
-            if len(wp) > 2 and wp[2] == 1.0: 
+            if len(wp) > 2 and wp[2] in [1.0, 2.0, 3.0]: 
                 target_in_sight = True
-                rospy.loginfo("Trovato bersaglio speciale")
+                #rospy.loginfo("Trovato bersaglio speciale")
                 # Calcoliamo la distanza fisica da Zeno al bersaglio speciale
                 dist_to_special_target = math.sqrt((wp[0] - current_n)**2 + (wp[1] - current_e)**2)
                 break
+	   
+	wp_curva = self.waypoints[self.current_wp_idx] 
+	if len(wp_curva) > 2 and wp_curva[2] in [-1.0, 3.0, 4.0]:
+		rospy.loginfo("debug: curva indice %d", self.current_wp_idx)
 
         # ==========================================================
         # 2. CALCOLO DEL LOOK-AHEAD DINAMICO (L)
@@ -302,7 +306,7 @@ class WPController:
         # Override della soglia: se il wp da superare è un target (z=1), esigi altissima precisione!
         if len(wp_end) > 2 and wp_end[2] == 1.0:
             current_position_th = 0.5 # Passaggio quasi obbligato
-            rospy.loginfo("PASSAGGIO OBLLIGAto A 0.5")
+            #rospy.loginfo("PASSAGGIO OBLLIGATO A 0.5")
         else:
             current_position_th = self.position_th # Tolleranza morbida standard
 

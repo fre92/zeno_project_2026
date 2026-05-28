@@ -178,10 +178,6 @@ def solve_tsp(start_ned, targets_ned, grid, resolution, min_n, min_e):
     ordered_targets = [all_points[idx] for idx in best_order_indices]
     return ordered_targets, best_cost
 
-# ==============================================================================
-# NUOVE FUNZIONI: GENERAZIONE TARGET VIRTUALI E CALCOLO COPERTURA
-# ==============================================================================
-
 def simulate_sensor_coverage(grid, path, min_n, min_e, resolution, swath_width, cov_grid=None):
     """
     Simula la copertura dei sensori lungo un path e aggiorna la griglia di copertura (cov_grid).
@@ -470,6 +466,43 @@ def main():
     end_time = time.time()
 
     if full_path_ned:
+
+        # Controllo le curve
+	if len(full_path_ned) > 2:
+            
+            for idx in range(1, len(full_path_ned) - 1):
+                
+                # Calcoliamo le variazioni
+                dn_prev = full_path_ned[idx][0] - full_path_ned[idx-1][0]
+                de_prev = full_path_ned[idx][1] - full_path_ned[idx-1][1]
+                
+                dn_new = full_path_ned[idx+1][0] - full_path_ned[idx][0]
+                de_new = full_path_ned[idx+1][1] - full_path_ned[idx][1]
+                
+                # math.atan2 ci dà la direzione pura in radianti (da -pi a pi)
+                angolo_prev = math.atan2(de_prev, dn_prev)
+                angolo_new = math.atan2(de_new, dn_new)
+
+		diff_angolo = angolo_prev - angolo_new
+                diff_normalizzata = math.atan2(math.sin(diff_angolo), math.cos(diff_angolo))
+                
+                # Usiamo una piccolissima tolleranza per i floating point
+                # Se la differenza tra gli angoli è maggiore di un'inezia, stiamo curvando
+                if abs(diff_normalizzata) > 0.01: 
+                    rospy.loginfo("CURVA indice %d", idx)
+                    
+                    stato_z_attuale = full_path_ned[idx][2]
+                    for j in range(max(-4, 0 - idx), min(4, len(full_path_ned) - idx)):
+                    	if stato_z_attuale == 1.0:
+                        	# È un TARGET principale ED è una Curva
+                        	full_path_ned[idx+j][2] = 3.0 
+                    	elif stato_z_attuale == 2.0:
+                        	# È un TARGET virtuale ED è una Curva
+                        	full_path_ned[idx+j][2] = 4.0 
+                    	else:
+                        	# È solo una normale curva per evitare un ostacolo
+                        	full_path_ned[idx+j][2] = -1.0
+
         msg = WaypointPath()
         for point in full_path_ned:
             p = Point()

@@ -1,0 +1,22 @@
+<launch>
+
+    <rosparam command="load" file="$(find zeno_python)/config/waypoints.yaml" />
+    <rosparam command="load" file="$(find zeno_python)/config/targets.yaml" />
+    <rosparam command="load" file="$(find zeno_python)/config/obstacles.yaml" />
+    <rosparam command="load" file="$(find zeno_python)/config/coverage_targets.yaml" />
+    <rosparam command="load" file="$(find zeno_python)/config/region_params.yaml" />
+
+
+
+    <!-- lancia controllore -->
+    <node pkg="zeno_python" type="path_controller.py" name="path_controller" output="screen"/>
+
+    <!-- lancia plot -->
+    <node pkg="zeno_python" type="plot_completo.py" name="plot_completo" output="screen"/>
+
+    <node pkg="zeno_python" type="planner_astar_coverage.py" name="planner_astar_coverage" output="screen"/>
+
+   
+
+
+</launch>

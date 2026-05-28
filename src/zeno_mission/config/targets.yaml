@@ -1,5 +1,11 @@
 targets:
 # --- Target EXTRA validi all'interno della Safezone ristretta ---
-  - [43.7063729, 10.4754650]  # Target Sicuro A (NED: 10, 30) - Zona bassa/destra
-  - [43.7065079, 10.4755891]  # Target Sicuro B (NED: 25, 40) - Zona centrale
-  - [43.7066879, 10.4754650]  # Target Sicuro C (NED: 45, 30) - Zona Nord
+#  - [43.7063729, 10.4754650]  # Target Sicuro A (NED: 10, 30) - Zona bassa/destra
+#  - [43.7065079, 10.4755891]  # Target Sicuro B (NED: 25, 40) - Zona centrale
+#  - [43.7066879, 10.4754650]  # Target Sicuro C (NED: 45, 30) - Zona Nord
+  - [43.7065128, 10.4752562]
+  - [43.7066204, 10.4754251]
+  - [43.7066514, 10.4752405]
+  - [43.7064982, 10.4754498]
+  - [43.7063935, 10.4756603]
+  - [43.7064003, 10.4755168]
