@@ -6,7 +6,7 @@
 
 
     <!-- lancia controllore -->
-    <node pkg="zeno_mission" type="path_controller.py" name="path_controller" output="screen"/>
+    <node pkg="zeno_mission" type="phase3_path_controller.py" name="phase3_path_controller" output="screen"/>
 
     <!-- lancia plot -->
     <node pkg="zeno_mission" type="phase3_plot.py" name="nav_plot_completo" output="screen" />
