@@ -1,0 +1,81 @@
+geolocated_objects_count: 4
+sonar_range_m: 25.000
+sensor_x_offset_m: 0.063
+sensor_y_offset_m: 0.354
+sensor_z_offset_m: 0.096
+
+OBJECT 1
+classification: tube
+confidence: 0.875
+latitude: 43.7065316023
+longitude: 10.4751542403
+ping_index: 603
+ping_stamp: 121.295622678
+row_index: 47
+centroid_px: [1280.80, 47.06]
+bbox_px: [1249, 34, 66, 23]
+auv_latitude: 43.7065419223
+auv_longitude: 10.4752324397
+auv_yaw_rad: 2.971475
+altitude_m: 3.557
+slant_range_m: 7.020
+ground_range_m: 6.052
+body_position_m: [0.063, 6.406, 0.096]
+ned_offset_m: [-1.147, -6.303, 0.096]
+
+OBJECT 2
+classification: tube
+confidence: 0.625
+latitude: 43.7065586778
+longitude: 10.4753265472
+ping_index: 623
+ping_stamp: 125.154767248
+row_index: 27
+centroid_px: [666.50, 27.00]
+bbox_px: [661, 23, 12, 10]
+auv_latitude: 43.7065366861
+auv_longitude: 10.4752335243
+auv_yaw_rad: 2.818566
+altitude_m: 3.576
+slant_range_m: 8.338
+ground_range_m: 7.532
+body_position_m: [0.063, -7.886, 0.096]
+ned_offset_m: [2.443, 7.498, 0.096]
+
+OBJECT 3
+classification: tube
+confidence: 0.625
+latitude: 43.7065626926
+longitude: 10.4753263925
+ping_index: 513
+ping_stamp: 103.949081417
+row_index: 137
+centroid_px: [683.56, 136.96]
+bbox_px: [677, 124, 12, 26]
+auv_latitude: 43.7065664558
+auv_longitude: 10.4752333085
+auv_yaw_rad: -3.094305
+altitude_m: 3.364
+slant_range_m: 7.911
+ground_range_m: 7.160
+body_position_m: [0.063, -7.514, 0.096]
+ned_offset_m: [-0.418, 7.503, 0.096]
+
+OBJECT 4
+classification: tube
+confidence: 0.500
+latitude: 43.7065384105
+longitude: 10.4751374231
+ping_index: 594
+ping_stamp: 119.551130869
+row_index: 56
+centroid_px: [1324.15, 55.55]
+bbox_px: [1318, 53, 13, 7]
+auv_latitude: 43.7065442703
+auv_longitude: 10.4752322196
+auv_yaw_rad: 3.064804
+altitude_m: 3.489
+slant_range_m: 8.104
+ground_range_m: 7.314
+body_position_m: [0.063, 7.668, 0.096]
+ned_offset_m: [-0.651, -7.641, 0.096]

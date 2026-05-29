@@ -1,0 +1,24 @@
+geolocated_objects_count: 1
+sonar_range_m: 25.000
+sensor_x_offset_m: 0.063
+sensor_y_offset_m: 0.354
+sensor_z_offset_m: 0.096
+
+OBJECT 1
+classification: buoy
+confidence: 0.750
+latitude: 43.7064436185
+longitude: 10.4753769933
+ping_index: 2204
+ping_stamp: 490.297702113
+row_index: 146
+centroid_px: [1471.50, 146.00]
+bbox_px: [1468, 143, 8, 7]
+auv_latitude: 43.7064046676
+auv_longitude: 10.4755162447
+auv_yaw_rad: -2.768338
+altitude_m: 1.624
+slant_range_m: 11.788
+ground_range_m: 11.675
+body_position_m: [0.063, 12.029, 0.096]
+ned_offset_m: [4.328, -11.224, 0.096]

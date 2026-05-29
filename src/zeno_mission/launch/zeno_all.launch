@@ -1,8 +1,6 @@
 <launch>
     <arg name="phase" default="1" doc="Fase di missione da eseguire (1 per Pure Pursuit, 3 per RRT Path Tracking)" />
 
-    <include file="$(find zeno_sim_pkg)/launch/zeno.launch" />
-
     <group if="$(eval arg('phase') == 1)">
         <include file="$(find zeno_mission)/launch/zeno_phase1.launch" />
         <include file="$(find fls_detection)/launch/FLS_launch.launch" />
@@ -13,5 +11,8 @@
 
     <group if="$(eval arg('phase') == 3)">
         <include file="$(find zeno_mission)/launch/zeno_phase3.launch" /> 
+        <include file="$(find fls_detection)/launch/FLS_launch.launch" />
+        <include file="$(find sss_package)/launch/sss.launch" />
+        
     </group>
 </launch>

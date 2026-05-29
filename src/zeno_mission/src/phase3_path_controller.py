@@ -387,8 +387,8 @@ class WPController:
         surge = self.max_surge_speed * surge_factor
 
         cmd = Rel_error_joystick()
-        cmd.error_yaw = yaw_cmd_boosted
-        #cmd.error_yaw = yaw_error_deg
+        #cmd.error_yaw = yaw_cmd_boosted
+        cmd.error_yaw = yaw_error_deg*0.25
         cmd.error_surge_speed = surge
         self.joystic_pub.publish(cmd)
 

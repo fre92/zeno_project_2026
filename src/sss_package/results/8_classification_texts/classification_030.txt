@@ -1,0 +1,44 @@
+image_index: 30
+detections_count: 0
+
+PROCESSING PARAMETERS
+log_filter_scale: 255.000
+median_kernel_size: 3
+gaussian_kernel_size: 5
+gaussian_sigma: 0.000
+clahe_clip_limit: 2.000
+clahe_tile_grid_size: 8
+percentile_low: 2.000
+percentile_high: 98.000
+bright_morph_first_open_kernel_size: 3
+bright_morph_close_kernel_size: 5
+bright_morph_final_open_kernel_size: 5
+bright_morph_final_close_kernel_size: 9
+bright_morph_iterations: 1
+dark_morph_open_kernel_size: 3
+dark_morph_first_close_kernel_width: 5
+dark_morph_first_close_kernel_height: 3
+dark_morph_final_close_kernel_width: 9
+dark_morph_final_close_kernel_height: 3
+dark_morph_iterations: 1
+saliency_percentile: 70.000
+cfar_train_cells: 18
+cfar_guard_cells: 5
+cfar_rank_percentile: 60.000
+cfar_threshold_scale: 1.000
+cfar_threshold_offset: 2.000
+cfar_detect_dark: True
+cfar_pfa: 0.001000
+bright_percentile: 85.000
+dark_percentile: 25.000
+meters_per_pixel_x: 0.025000
+meters_per_pixel_y: 0.125000
+nadir_column: center_of_image
+min_object_area_px: 40
+min_shadow_area_px: 20
+max_shadow_alongtrack_gap_m: 2.500
+max_shadow_accrosstrack_gap_m: 8.000
+shadow_height_scale: 1.000
+min_classification_confidence: 0.350
+
+Nessuna detection trovata.

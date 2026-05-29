@@ -1,0 +1,114 @@
+image_index: 16
+detections_count: 3
+
+PROCESSING PARAMETERS
+log_filter_scale: 255.000
+median_kernel_size: 3
+gaussian_kernel_size: 5
+gaussian_sigma: 0.000
+clahe_clip_limit: 2.000
+clahe_tile_grid_size: 8
+percentile_low: 2.000
+percentile_high: 98.000
+bright_morph_first_open_kernel_size: 3
+bright_morph_close_kernel_size: 5
+bright_morph_final_open_kernel_size: 5
+bright_morph_final_close_kernel_size: 9
+bright_morph_iterations: 1
+dark_morph_open_kernel_size: 3
+dark_morph_first_close_kernel_width: 5
+dark_morph_first_close_kernel_height: 3
+dark_morph_final_close_kernel_width: 9
+dark_morph_final_close_kernel_height: 3
+dark_morph_iterations: 1
+saliency_percentile: 70.000
+cfar_train_cells: 18
+cfar_guard_cells: 5
+cfar_rank_percentile: 60.000
+cfar_threshold_scale: 1.000
+cfar_threshold_offset: 2.000
+cfar_detect_dark: True
+cfar_pfa: 0.001000
+bright_percentile: 85.000
+dark_percentile: 25.000
+meters_per_pixel_x: 0.025000
+meters_per_pixel_y: 0.125000
+nadir_column: center_of_image
+min_object_area_px: 40
+min_shadow_area_px: 20
+max_shadow_alongtrack_gap_m: 2.500
+max_shadow_accrosstrack_gap_m: 8.000
+shadow_height_scale: 1.000
+min_classification_confidence: 0.350
+
+DETECTION 1
+classification: tube
+confidence: 0.750
+tube_score: 6.000
+buoy_score: 5.000
+pair_score: 3.000
+estimated_height_m: 4.347
+object_id: 3
+object_centroid_px: [1329.10, 101.04]
+object_bbox_px: [1316, 86, 27, 33]
+object_max_dimension_m: 4.026
+object_min_dimension_m: 0.459
+object_aspect_ratio: 8.779
+object_area_m2: 0.891
+object_angle_deg: -9.926
+shadow_id: 59
+shadow_centroid_px: [1386.50, 100.50]
+shadow_bbox_px: [1327, 84, 120, 34]
+shadow_max_dimension_m: 4.347
+shadow_min_dimension_m: 2.531
+shadow_aspect_ratio: 1.718
+shadow_area_m2: 8.459
+shadow_angle_deg: -10.830
+
+DETECTION 2
+classification: tube
+confidence: 0.625
+tube_score: 5.000
+buoy_score: 4.000
+pair_score: 3.000
+estimated_height_m: 0.753
+object_id: 4
+object_centroid_px: [619.90, 120.20]
+object_bbox_px: [616, 116, 9, 9]
+object_max_dimension_m: 1.003
+object_min_dimension_m: 0.191
+object_aspect_ratio: 5.243
+object_area_m2: 0.142
+object_angle_deg: -86.186
+shadow_id: 69
+shadow_centroid_px: [507.00, 110.50]
+shadow_bbox_px: [504, 107, 6, 7]
+shadow_max_dimension_m: 0.753
+shadow_min_dimension_m: 0.107
+shadow_aspect_ratio: 7.015
+shadow_area_m2: 0.042
+shadow_angle_deg: -82.405
+
+DETECTION 3
+classification: tube
+confidence: 0.625
+tube_score: 5.000
+buoy_score: 4.000
+pair_score: 3.000
+estimated_height_m: 3.100
+object_id: 5
+object_centroid_px: [1342.51, 132.91]
+object_bbox_px: [1337, 126, 13, 14]
+object_max_dimension_m: 1.637
+object_min_dimension_m: 0.190
+object_aspect_ratio: 8.617
+object_area_m2: 0.213
+object_angle_deg: -7.595
+shadow_id: 80
+shadow_centroid_px: [1413.00, 131.00]
+shadow_bbox_px: [1351, 122, 125, 19]
+shadow_max_dimension_m: 3.100
+shadow_min_dimension_m: 2.250
+shadow_aspect_ratio: 1.378
+shadow_area_m2: 4.205
+shadow_angle_deg: -0.000

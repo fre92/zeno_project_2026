@@ -1,0 +1,3 @@
+name,latitude,longitude,classification,confidence,ping_index,centroid_x_px,centroid_y_px,bbox_x_px,bbox_y_px,bbox_width_px,bbox_height_px
+object_001,43.7064865201,10.4755707649,tube,0.875,1939,603.47,10.56,586,0,36,23
+object_002,43.7063458514,10.4755739086,tube,0.875,1941,1263.35,9.31,1238,0,51,21

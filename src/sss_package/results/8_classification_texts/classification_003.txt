@@ -1,0 +1,90 @@
+image_index: 3
+detections_count: 2
+
+PROCESSING PARAMETERS
+log_filter_scale: 255.000
+median_kernel_size: 3
+gaussian_kernel_size: 5
+gaussian_sigma: 0.000
+clahe_clip_limit: 2.000
+clahe_tile_grid_size: 8
+percentile_low: 2.000
+percentile_high: 98.000
+bright_morph_first_open_kernel_size: 3
+bright_morph_close_kernel_size: 5
+bright_morph_final_open_kernel_size: 5
+bright_morph_final_close_kernel_size: 9
+bright_morph_iterations: 1
+dark_morph_open_kernel_size: 3
+dark_morph_first_close_kernel_width: 5
+dark_morph_first_close_kernel_height: 3
+dark_morph_final_close_kernel_width: 9
+dark_morph_final_close_kernel_height: 3
+dark_morph_iterations: 1
+saliency_percentile: 70.000
+cfar_train_cells: 18
+cfar_guard_cells: 5
+cfar_rank_percentile: 60.000
+cfar_threshold_scale: 1.000
+cfar_threshold_offset: 2.000
+cfar_detect_dark: True
+cfar_pfa: 0.001000
+bright_percentile: 85.000
+dark_percentile: 25.000
+meters_per_pixel_x: 0.025000
+meters_per_pixel_y: 0.125000
+nadir_column: center_of_image
+min_object_area_px: 40
+min_shadow_area_px: 20
+max_shadow_alongtrack_gap_m: 2.500
+max_shadow_accrosstrack_gap_m: 8.000
+shadow_height_scale: 1.000
+min_classification_confidence: 0.350
+
+DETECTION 1
+classification: buoy
+confidence: 0.750
+tube_score: 5.000
+buoy_score: 6.000
+pair_score: 3.000
+estimated_height_m: 1.775
+object_id: 1
+object_centroid_px: [575.50, 5.50]
+object_bbox_px: [570, 0, 12, 12]
+object_max_dimension_m: 1.375
+object_min_dimension_m: 0.275
+object_aspect_ratio: 5.000
+object_area_m2: 0.248
+object_angle_deg: -0.000
+shadow_id: 5
+shadow_centroid_px: [531.50, 7.50]
+shadow_bbox_px: [496, 3, 72, 10]
+shadow_max_dimension_m: 1.775
+shadow_min_dimension_m: 1.125
+shadow_aspect_ratio: 1.578
+shadow_area_m2: 1.219
+shadow_angle_deg: 0.000
+
+DETECTION 2
+classification: tube
+confidence: 0.750
+tube_score: 6.000
+buoy_score: 5.000
+pair_score: 3.000
+estimated_height_m: 10.751
+object_id: 2
+object_centroid_px: [634.55, 66.30]
+object_bbox_px: [605, 38, 68, 63]
+object_max_dimension_m: 7.821
+object_min_dimension_m: 1.099
+object_aspect_ratio: 7.119
+object_area_m2: 2.100
+object_angle_deg: -81.953
+shadow_id: 17
+shadow_centroid_px: [567.00, 76.00]
+shadow_bbox_px: [482, 33, 171, 87]
+shadow_max_dimension_m: 10.751
+shadow_min_dimension_m: 3.405
+shadow_aspect_ratio: 3.158
+shadow_area_m2: 21.619
+shadow_angle_deg: -80.780
