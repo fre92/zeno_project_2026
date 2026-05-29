@@ -1,0 +1,14 @@
+<launch>
+    <node pkg="fls_detection" type="fls_detector_node.py" name="fls_detector_node" output="screen">
+    </node>
+
+    <node pkg="localization" type="localization.py" name="fls_localization_node" output="screen">
+    </node>
+
+    <node pkg="rqt_image_view" type="rqt_image_view" name="rqt_image_view_contours" args="/perception/debug/contours" output="log" />
+    
+    <node pkg="rqt_image_view" type="rqt_image_view" name="rqt_image_view_binary" args="/perception/debug/binary" output="log" />
+
+    <node pkg="rqt_image_view" type="rqt_image_view" name="rqt_image_view_saliency" args="/perception/debug/saliency" output="log" />
+
+    </launch>
