@@ -1,2 +1,2 @@
-joystick_command:marta_msgs:zeno_mission:zeno_sim_pkg
+FLS/fls_detection:FLS/localization:joystick_command:marta_msgs:sss_package:zeno_mission:zeno_sim_pkg
 -DCATKIN_DEVEL_PREFIX=/home/student/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/student/catkin_ws/install -G Unix Makefiles

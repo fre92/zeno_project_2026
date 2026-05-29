@@ -8,6 +8,7 @@ import rospy
 import cv2          # OpenCV
 import numpy as np
 import os
+import rospkg
 import copy
 import matplotlib
 matplotlib.use('Agg')
@@ -70,23 +71,35 @@ class ImageCreatorNode:
         self.altitude_start_time = None
         self.altitude_samples = []
 
-        # creare cartella per immagini
-        self.raw_image_folder = "/home/student/catkin_ws/results/0_raw_images"
-        if not os.path.exists(self.raw_image_folder):
-            os.makedirs(self.raw_image_folder)
+        rospack = rospkg.RosPack()
+        pkg_path = rospack.get_path('sss_package') 
 
-        self.waterfall_image_folder = "/home/student/catkin_ws/results/1_waterfall_images"
-        if not os.path.exists(self.waterfall_image_folder):
-            os.makedirs(self.waterfall_image_folder)
+        # 2. Definisci la cartella 'results' principale
+        default_results_dir = os.path.join(pkg_path, 'results')
+        results_dir = rospy.get_param('~results_folder', default_results_dir)
 
-        self.echo_plot_folder = "/home/student/catkin_ws/results/9_echo_intensity_plots"
-        if not os.path.exists(self.echo_plot_folder):
-            os.makedirs(self.echo_plot_folder)
+        # 3. Definisci i percorsi di tutte le sottocartelle
+        self.raw_image_folder = os.path.join(results_dir, "0_raw_images")
+        self.waterfall_image_folder = os.path.join(results_dir, "1_waterfall_images")
+        self.echo_plot_folder = os.path.join(results_dir, "9_echo_intensity_plots")
 
-        self.altitude_plot_folder = rospy.get_param('~altitude_plot_folder', "/home/student/catkin_ws/results/9_altitude_plots")
-        if not os.path.exists(self.altitude_plot_folder):
-            os.makedirs(self.altitude_plot_folder)
+        # Manteniamo il tuo parametro specifico per altitude_plot_folder, aggiornando il default
+        default_altitude_dir = os.path.join(results_dir, "9_altitude_plots")
+        self.altitude_plot_folder = rospy.get_param('~altitude_plot_folder', default_altitude_dir)
 
+        # 4. Crea tutte le cartelle in un colpo solo tramite un ciclo
+        folders_to_create = [
+            self.raw_image_folder,
+            self.waterfall_image_folder,
+            self.echo_plot_folder,
+            self.altitude_plot_folder
+        ]
+
+        for folder in folders_to_create:
+            if not os.path.exists(folder):
+                os.makedirs(folder)
+
+        # 5. Hook di spegnimento del nodo (invariato)
         rospy.on_shutdown(self.save_echo_intensity_plots)
         rospy.on_shutdown(self.save_altitude_plot)
 

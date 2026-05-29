@@ -6,6 +6,8 @@
                :std_msgs-msg
 )
   :components ((:file "_package")
+    (:file "Altitude" :depends-on ("_package_Altitude"))
+    (:file "_package_Altitude" :depends-on ("_package"))
     (:file "Distance" :depends-on ("_package_Distance"))
     (:file "_package_Distance" :depends-on ("_package"))
     (:file "Euler" :depends-on ("_package_Euler"))

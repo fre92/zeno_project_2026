@@ -5,6 +5,10 @@
 
     <group if="$(eval arg('phase') == 1)">
         <include file="$(find zeno_mission)/launch/zeno_phase1.launch" />
+        <include file="$(find fls_detection)/launch/FLS_launch.launch" />
+        <include file="$(find sss_package)/launch/sss.launch" />
+        
+
     </group>
 
     <group if="$(eval arg('phase') == 3)">

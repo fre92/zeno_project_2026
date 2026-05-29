@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/marta_msgs_generate_messages_lisp"
   "/home/student/catkin_ws/devel/share/common-lisp/ros/marta_msgs/msg/Euler.lisp"
   "/home/student/catkin_ws/devel/share/common-lisp/ros/marta_msgs/msg/Position.lisp"
+  "/home/student/catkin_ws/devel/share/common-lisp/ros/marta_msgs/msg/Altitude.lisp"
   "/home/student/catkin_ws/devel/share/common-lisp/ros/marta_msgs/msg/Distance.lisp"
   "/home/student/catkin_ws/devel/share/common-lisp/ros/marta_msgs/msg/RollPitchYaw.lisp"
   "/home/student/catkin_ws/devel/share/common-lisp/ros/marta_msgs/msg/Quaternion.lisp"

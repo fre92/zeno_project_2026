@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/marta_msgs_generate_messages_eus"
   "/home/student/catkin_ws/devel/share/roseus/ros/marta_msgs/msg/Euler.l"
   "/home/student/catkin_ws/devel/share/roseus/ros/marta_msgs/msg/Position.l"
+  "/home/student/catkin_ws/devel/share/roseus/ros/marta_msgs/msg/Altitude.l"
   "/home/student/catkin_ws/devel/share/roseus/ros/marta_msgs/msg/Distance.l"
   "/home/student/catkin_ws/devel/share/roseus/ros/marta_msgs/msg/RollPitchYaw.l"
   "/home/student/catkin_ws/devel/share/roseus/ros/marta_msgs/msg/Quaternion.l"

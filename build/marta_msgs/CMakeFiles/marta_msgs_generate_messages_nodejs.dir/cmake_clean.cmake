@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/marta_msgs_generate_messages_nodejs"
   "/home/student/catkin_ws/devel/share/gennodejs/ros/marta_msgs/msg/Euler.js"
   "/home/student/catkin_ws/devel/share/gennodejs/ros/marta_msgs/msg/Position.js"
+  "/home/student/catkin_ws/devel/share/gennodejs/ros/marta_msgs/msg/Altitude.js"
   "/home/student/catkin_ws/devel/share/gennodejs/ros/marta_msgs/msg/Distance.js"
   "/home/student/catkin_ws/devel/share/gennodejs/ros/marta_msgs/msg/RollPitchYaw.js"
   "/home/student/catkin_ws/devel/share/gennodejs/ros/marta_msgs/msg/Quaternion.js"

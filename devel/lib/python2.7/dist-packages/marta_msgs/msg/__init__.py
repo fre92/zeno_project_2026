@@ -1,3 +1,4 @@
+from ._Altitude import *
 from ._Distance import *
 from ._Euler import *
 from ._LatitudeLongitudeAltitude import *

@@ -1,6 +1,8 @@
 (cl:defpackage marta_msgs-msg
   (:use )
   (:export
+   "<ALTITUDE>"
+   "ALTITUDE"
    "<DISTANCE>"
    "DISTANCE"
    "<EULER>"

@@ -55,6 +55,7 @@ include marta_msgs/CMakeFiles/marta_msgs_generate_messages_py.dir/progress.make
 
 marta_msgs/CMakeFiles/marta_msgs_generate_messages_py: /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Euler.py
 marta_msgs/CMakeFiles/marta_msgs_generate_messages_py: /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Position.py
+marta_msgs/CMakeFiles/marta_msgs_generate_messages_py: /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Altitude.py
 marta_msgs/CMakeFiles/marta_msgs_generate_messages_py: /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Distance.py
 marta_msgs/CMakeFiles/marta_msgs_generate_messages_py: /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_RollPitchYaw.py
 marta_msgs/CMakeFiles/marta_msgs_generate_messages_py: /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Quaternion.py
@@ -78,25 +79,31 @@ marta_msgs/CMakeFiles/marta_msgs_generate_messages_py: /home/student/catkin_ws/d
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG marta_msgs/Position"
 	cd /home/student/catkin_ws/build/marta_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/student/catkin_ws/src/marta_msgs/msg/Position.msg -Imarta_msgs:/home/student/catkin_ws/src/marta_msgs/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg -p marta_msgs -o /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg
 
+/home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Altitude.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
+/home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Altitude.py: /home/student/catkin_ws/src/marta_msgs/msg/Altitude.msg
+/home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Altitude.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG marta_msgs/Altitude"
+	cd /home/student/catkin_ws/build/marta_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/student/catkin_ws/src/marta_msgs/msg/Altitude.msg -Imarta_msgs:/home/student/catkin_ws/src/marta_msgs/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg -p marta_msgs -o /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg
+
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Distance.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Distance.py: /home/student/catkin_ws/src/marta_msgs/msg/Distance.msg
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Distance.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG marta_msgs/Distance"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG marta_msgs/Distance"
 	cd /home/student/catkin_ws/build/marta_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/student/catkin_ws/src/marta_msgs/msg/Distance.msg -Imarta_msgs:/home/student/catkin_ws/src/marta_msgs/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg -p marta_msgs -o /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg
 
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_RollPitchYaw.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_RollPitchYaw.py: /home/student/catkin_ws/src/marta_msgs/msg/RollPitchYaw.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG marta_msgs/RollPitchYaw"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python from MSG marta_msgs/RollPitchYaw"
 	cd /home/student/catkin_ws/build/marta_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/student/catkin_ws/src/marta_msgs/msg/RollPitchYaw.msg -Imarta_msgs:/home/student/catkin_ws/src/marta_msgs/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg -p marta_msgs -o /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg
 
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Quaternion.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Quaternion.py: /home/student/catkin_ws/src/marta_msgs/msg/Quaternion.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python from MSG marta_msgs/Quaternion"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Python from MSG marta_msgs/Quaternion"
 	cd /home/student/catkin_ws/build/marta_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/student/catkin_ws/src/marta_msgs/msg/Quaternion.msg -Imarta_msgs:/home/student/catkin_ws/src/marta_msgs/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg -p marta_msgs -o /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg
 
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_LatitudeLongitudeAltitude.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_LatitudeLongitudeAltitude.py: /home/student/catkin_ws/src/marta_msgs/msg/LatitudeLongitudeAltitude.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Python from MSG marta_msgs/LatitudeLongitudeAltitude"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Python from MSG marta_msgs/LatitudeLongitudeAltitude"
 	cd /home/student/catkin_ws/build/marta_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/student/catkin_ws/src/marta_msgs/msg/LatitudeLongitudeAltitude.msg -Imarta_msgs:/home/student/catkin_ws/src/marta_msgs/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg -p marta_msgs -o /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg
 
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_SideScanSonar.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
@@ -105,7 +112,7 @@ marta_msgs/CMakeFiles/marta_msgs_generate_messages_py: /home/student/catkin_ws/d
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_SideScanSonar.py: /opt/ros/melodic/share/std_msgs/msg/UInt8MultiArray.msg
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_SideScanSonar.py: /opt/ros/melodic/share/std_msgs/msg/MultiArrayDimension.msg
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_SideScanSonar.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Python from MSG marta_msgs/SideScanSonar"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Python from MSG marta_msgs/SideScanSonar"
 	cd /home/student/catkin_ws/build/marta_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/student/catkin_ws/src/marta_msgs/msg/SideScanSonar.msg -Imarta_msgs:/home/student/catkin_ws/src/marta_msgs/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg -p marta_msgs -o /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg
 
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_NavStatus.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
@@ -115,7 +122,7 @@ marta_msgs/CMakeFiles/marta_msgs_generate_messages_py: /home/student/catkin_ws/d
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_NavStatus.py: /home/student/catkin_ws/src/marta_msgs/msg/Euler.msg
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_NavStatus.py: /home/student/catkin_ws/src/marta_msgs/msg/Position.msg
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_NavStatus.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Python from MSG marta_msgs/NavStatus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Python from MSG marta_msgs/NavStatus"
 	cd /home/student/catkin_ws/build/marta_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/student/catkin_ws/src/marta_msgs/msg/NavStatus.msg -Imarta_msgs:/home/student/catkin_ws/src/marta_msgs/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg -p marta_msgs -o /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg
 
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_MotionReference.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
@@ -127,27 +134,28 @@ marta_msgs/CMakeFiles/marta_msgs_generate_messages_py: /home/student/catkin_ws/d
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_MotionReference.py: /home/student/catkin_ws/src/marta_msgs/msg/NorthEastDown.msg
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_MotionReference.py: /home/student/catkin_ws/src/marta_msgs/msg/RollPitchYaw.msg
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_MotionReference.py: /home/student/catkin_ws/src/marta_msgs/msg/SurgeSwayHeave.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Python from MSG marta_msgs/MotionReference"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Python from MSG marta_msgs/MotionReference"
 	cd /home/student/catkin_ws/build/marta_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/student/catkin_ws/src/marta_msgs/msg/MotionReference.msg -Imarta_msgs:/home/student/catkin_ws/src/marta_msgs/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg -p marta_msgs -o /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg
 
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_NorthEastDown.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_NorthEastDown.py: /home/student/catkin_ws/src/marta_msgs/msg/NorthEastDown.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Python from MSG marta_msgs/NorthEastDown"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating Python from MSG marta_msgs/NorthEastDown"
 	cd /home/student/catkin_ws/build/marta_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/student/catkin_ws/src/marta_msgs/msg/NorthEastDown.msg -Imarta_msgs:/home/student/catkin_ws/src/marta_msgs/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg -p marta_msgs -o /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg
 
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_SurgeSwayHeave.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_SurgeSwayHeave.py: /home/student/catkin_ws/src/marta_msgs/msg/SurgeSwayHeave.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating Python from MSG marta_msgs/SurgeSwayHeave"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating Python from MSG marta_msgs/SurgeSwayHeave"
 	cd /home/student/catkin_ws/build/marta_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/student/catkin_ws/src/marta_msgs/msg/SurgeSwayHeave.msg -Imarta_msgs:/home/student/catkin_ws/src/marta_msgs/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg -p marta_msgs -o /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg
 
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_LatitudeLongitudeDepth.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_LatitudeLongitudeDepth.py: /home/student/catkin_ws/src/marta_msgs/msg/LatitudeLongitudeDepth.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating Python from MSG marta_msgs/LatitudeLongitudeDepth"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating Python from MSG marta_msgs/LatitudeLongitudeDepth"
 	cd /home/student/catkin_ws/build/marta_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/student/catkin_ws/src/marta_msgs/msg/LatitudeLongitudeDepth.msg -Imarta_msgs:/home/student/catkin_ws/src/marta_msgs/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg -p marta_msgs -o /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg
 
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/__init__.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/__init__.py: /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Euler.py
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/__init__.py: /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Position.py
+/home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/__init__.py: /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Altitude.py
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/__init__.py: /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Distance.py
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/__init__.py: /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_RollPitchYaw.py
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/__init__.py: /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Quaternion.py
@@ -158,12 +166,13 @@ marta_msgs/CMakeFiles/marta_msgs_generate_messages_py: /home/student/catkin_ws/d
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/__init__.py: /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_NorthEastDown.py
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/__init__.py: /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_SurgeSwayHeave.py
 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/__init__.py: /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_LatitudeLongitudeDepth.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating Python msg __init__.py for marta_msgs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating Python msg __init__.py for marta_msgs"
 	cd /home/student/catkin_ws/build/marta_msgs && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg --initpy
 
 marta_msgs_generate_messages_py: marta_msgs/CMakeFiles/marta_msgs_generate_messages_py
 marta_msgs_generate_messages_py: /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Euler.py
 marta_msgs_generate_messages_py: /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Position.py
+marta_msgs_generate_messages_py: /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Altitude.py
 marta_msgs_generate_messages_py: /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Distance.py
 marta_msgs_generate_messages_py: /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_RollPitchYaw.py
 marta_msgs_generate_messages_py: /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Quaternion.py

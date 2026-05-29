@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/marta_msgs_generate_messages_cpp"
   "/home/student/catkin_ws/devel/include/marta_msgs/Euler.h"
   "/home/student/catkin_ws/devel/include/marta_msgs/Position.h"
+  "/home/student/catkin_ws/devel/include/marta_msgs/Altitude.h"
   "/home/student/catkin_ws/devel/include/marta_msgs/Distance.h"
   "/home/student/catkin_ws/devel/include/marta_msgs/RollPitchYaw.h"
   "/home/student/catkin_ws/devel/include/marta_msgs/Quaternion.h"

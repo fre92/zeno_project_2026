@@ -39,6 +39,7 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/marta_msgs/msg" TYPE FILE FILES
+    "/home/student/catkin_ws/src/marta_msgs/msg/Altitude.msg"
     "/home/student/catkin_ws/src/marta_msgs/msg/Distance.msg"
     "/home/student/catkin_ws/src/marta_msgs/msg/Euler.msg"
     "/home/student/catkin_ws/src/marta_msgs/msg/LatitudeLongitudeAltitude.msg"

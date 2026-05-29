@@ -9,7 +9,13 @@ find_package(catkin REQUIRED COMPONENTS
   message_generation
 )
 
-add_message_files(DIRECTORY msg)
+
+add_message_files(
+  FILES
+  GeolocatedObject.msg
+  GeolocatedObjectList.msg
+  ImageMetadata.msg
+)
 
 generate_messages(
   DEPENDENCIES

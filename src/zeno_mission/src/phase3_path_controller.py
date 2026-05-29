@@ -336,19 +336,48 @@ class WPController:
         yaw_error = max(-max_heading, min(max_heading, yaw_error))
         yaw_error_deg = math.degrees(yaw_error)
 
+         
+        # Correzione anti-shaking (Zona morta )
+        dead_zone = 2.0      # Gradi di inerzia dei motori di Zeno
+        peace_margin = 0.5   # Gradi entro i quali consideriamo Zeno "perfettamente dritto"
+        
+        if yaw_error_deg > peace_margin:
+            # Scavalcamento zona morta a destra
+            yaw_cmd_boosted = yaw_error_deg + dead_zone
+        elif yaw_error_deg < -peace_margin:
+            # Scavalcamento zona morta a sinistra
+            yaw_cmd_boosted = yaw_error_deg - dead_zone
+        else:
+            # Siamo dritti, facciamolo scorrere per inerzia senza friggere i motori
+            yaw_cmd_boosted = 0.0 
+            
+        # Controllo limiti 
+        if yaw_cmd_boosted > self.max_heading_deg: 
+            yaw_cmd_boosted = self.max_heading_deg
+        elif yaw_cmd_boosted < -self.max_heading_deg: 
+            yaw_cmd_boosted = -self.max_heading_deg
+
+
+
+
         final_wp_n = self.waypoints[-1][0]
         final_wp_e = self.waypoints[-1][1]
         dist_to_mission_end = math.sqrt((final_wp_n - current_n)**2 + (final_wp_e - current_e)**2)
 
         heading_factor = 1 - min(abs(yaw_error_deg) / self.max_heading_deg, 1.0)
+        heading_factor_q=heading_factor**2
+
         distance_factor = min(dist_to_mission_end / self.distance_gain, 1.0) 
         track_factor = 1 - min(abs(error_track) / self.max_track_error, 1.0)
+        track_factor_q = track_factor**2
 
-        surge_factor = min(heading_factor, distance_factor, track_factor)
+        #surge_factor = min(heading_factor, distance_factor, track_factor)
+        surge_factor = min(heading_factor_q, distance_factor, track_factor_q)
         surge = self.max_surge_speed * surge_factor
 
         cmd = Rel_error_joystick()
-        cmd.error_yaw = yaw_error_deg
+        cmd.error_yaw = yaw_cmd_boosted
+        #cmd.error_yaw = yaw_error_deg
         cmd.error_surge_speed = surge
         self.joystic_pub.publish(cmd)
 

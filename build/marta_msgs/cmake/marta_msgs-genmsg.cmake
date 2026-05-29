@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "marta_msgs: 12 messages, 0 services")
+message(STATUS "marta_msgs: 13 messages, 0 services")
 
 set(MSG_I_FLAGS "-Imarta_msgs:/home/student/catkin_ws/src/marta_msgs/msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg;-Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg")
 
@@ -25,6 +25,11 @@ add_custom_target(_marta_msgs_generate_messages_check_deps_${_filename}
 get_filename_component(_filename "/home/student/catkin_ws/src/marta_msgs/msg/Position.msg" NAME_WE)
 add_custom_target(_marta_msgs_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "marta_msgs" "/home/student/catkin_ws/src/marta_msgs/msg/Position.msg" ""
+)
+
+get_filename_component(_filename "/home/student/catkin_ws/src/marta_msgs/msg/Altitude.msg" NAME_WE)
+add_custom_target(_marta_msgs_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "marta_msgs" "/home/student/catkin_ws/src/marta_msgs/msg/Altitude.msg" "std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/student/catkin_ws/src/marta_msgs/msg/Distance.msg" NAME_WE)
@@ -93,6 +98,12 @@ _generate_msg_cpp(marta_msgs
   "/home/student/catkin_ws/src/marta_msgs/msg/Position.msg"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/marta_msgs
+)
+_generate_msg_cpp(marta_msgs
+  "/home/student/catkin_ws/src/marta_msgs/msg/Altitude.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/marta_msgs
 )
 _generate_msg_cpp(marta_msgs
@@ -174,6 +185,8 @@ get_filename_component(_filename "/home/student/catkin_ws/src/marta_msgs/msg/Qua
 add_dependencies(marta_msgs_generate_messages_cpp _marta_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/student/catkin_ws/src/marta_msgs/msg/Position.msg" NAME_WE)
 add_dependencies(marta_msgs_generate_messages_cpp _marta_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/student/catkin_ws/src/marta_msgs/msg/Altitude.msg" NAME_WE)
+add_dependencies(marta_msgs_generate_messages_cpp _marta_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/student/catkin_ws/src/marta_msgs/msg/Distance.msg" NAME_WE)
 add_dependencies(marta_msgs_generate_messages_cpp _marta_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/student/catkin_ws/src/marta_msgs/msg/RollPitchYaw.msg" NAME_WE)
@@ -214,6 +227,12 @@ _generate_msg_eus(marta_msgs
   "/home/student/catkin_ws/src/marta_msgs/msg/Position.msg"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/marta_msgs
+)
+_generate_msg_eus(marta_msgs
+  "/home/student/catkin_ws/src/marta_msgs/msg/Altitude.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/marta_msgs
 )
 _generate_msg_eus(marta_msgs
@@ -295,6 +314,8 @@ get_filename_component(_filename "/home/student/catkin_ws/src/marta_msgs/msg/Qua
 add_dependencies(marta_msgs_generate_messages_eus _marta_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/student/catkin_ws/src/marta_msgs/msg/Position.msg" NAME_WE)
 add_dependencies(marta_msgs_generate_messages_eus _marta_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/student/catkin_ws/src/marta_msgs/msg/Altitude.msg" NAME_WE)
+add_dependencies(marta_msgs_generate_messages_eus _marta_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/student/catkin_ws/src/marta_msgs/msg/Distance.msg" NAME_WE)
 add_dependencies(marta_msgs_generate_messages_eus _marta_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/student/catkin_ws/src/marta_msgs/msg/RollPitchYaw.msg" NAME_WE)
@@ -335,6 +356,12 @@ _generate_msg_lisp(marta_msgs
   "/home/student/catkin_ws/src/marta_msgs/msg/Position.msg"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/marta_msgs
+)
+_generate_msg_lisp(marta_msgs
+  "/home/student/catkin_ws/src/marta_msgs/msg/Altitude.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/marta_msgs
 )
 _generate_msg_lisp(marta_msgs
@@ -416,6 +443,8 @@ get_filename_component(_filename "/home/student/catkin_ws/src/marta_msgs/msg/Qua
 add_dependencies(marta_msgs_generate_messages_lisp _marta_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/student/catkin_ws/src/marta_msgs/msg/Position.msg" NAME_WE)
 add_dependencies(marta_msgs_generate_messages_lisp _marta_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/student/catkin_ws/src/marta_msgs/msg/Altitude.msg" NAME_WE)
+add_dependencies(marta_msgs_generate_messages_lisp _marta_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/student/catkin_ws/src/marta_msgs/msg/Distance.msg" NAME_WE)
 add_dependencies(marta_msgs_generate_messages_lisp _marta_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/student/catkin_ws/src/marta_msgs/msg/RollPitchYaw.msg" NAME_WE)
@@ -456,6 +485,12 @@ _generate_msg_nodejs(marta_msgs
   "/home/student/catkin_ws/src/marta_msgs/msg/Position.msg"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/marta_msgs
+)
+_generate_msg_nodejs(marta_msgs
+  "/home/student/catkin_ws/src/marta_msgs/msg/Altitude.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/marta_msgs
 )
 _generate_msg_nodejs(marta_msgs
@@ -537,6 +572,8 @@ get_filename_component(_filename "/home/student/catkin_ws/src/marta_msgs/msg/Qua
 add_dependencies(marta_msgs_generate_messages_nodejs _marta_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/student/catkin_ws/src/marta_msgs/msg/Position.msg" NAME_WE)
 add_dependencies(marta_msgs_generate_messages_nodejs _marta_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/student/catkin_ws/src/marta_msgs/msg/Altitude.msg" NAME_WE)
+add_dependencies(marta_msgs_generate_messages_nodejs _marta_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/student/catkin_ws/src/marta_msgs/msg/Distance.msg" NAME_WE)
 add_dependencies(marta_msgs_generate_messages_nodejs _marta_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/student/catkin_ws/src/marta_msgs/msg/RollPitchYaw.msg" NAME_WE)
@@ -577,6 +614,12 @@ _generate_msg_py(marta_msgs
   "/home/student/catkin_ws/src/marta_msgs/msg/Position.msg"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/marta_msgs
+)
+_generate_msg_py(marta_msgs
+  "/home/student/catkin_ws/src/marta_msgs/msg/Altitude.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/marta_msgs
 )
 _generate_msg_py(marta_msgs
@@ -657,6 +700,8 @@ add_dependencies(marta_msgs_generate_messages marta_msgs_generate_messages_py)
 get_filename_component(_filename "/home/student/catkin_ws/src/marta_msgs/msg/Quaternion.msg" NAME_WE)
 add_dependencies(marta_msgs_generate_messages_py _marta_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/student/catkin_ws/src/marta_msgs/msg/Position.msg" NAME_WE)
+add_dependencies(marta_msgs_generate_messages_py _marta_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/student/catkin_ws/src/marta_msgs/msg/Altitude.msg" NAME_WE)
 add_dependencies(marta_msgs_generate_messages_py _marta_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/student/catkin_ws/src/marta_msgs/msg/Distance.msg" NAME_WE)
 add_dependencies(marta_msgs_generate_messages_py _marta_msgs_generate_messages_check_deps_${_filename})

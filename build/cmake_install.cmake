@@ -132,7 +132,10 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/student/catkin_ws/build/gtest/cmake_install.cmake")
   include("/home/student/catkin_ws/build/marta_msgs/cmake_install.cmake")
+  include("/home/student/catkin_ws/build/FLS/fls_detection/cmake_install.cmake")
   include("/home/student/catkin_ws/build/joystick_command/cmake_install.cmake")
+  include("/home/student/catkin_ws/build/FLS/localization/cmake_install.cmake")
+  include("/home/student/catkin_ws/build/sss_package/cmake_install.cmake")
   include("/home/student/catkin_ws/build/zeno_mission/cmake_install.cmake")
   include("/home/student/catkin_ws/build/zeno_sim_pkg/cmake_install.cmake")
 

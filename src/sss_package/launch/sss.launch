@@ -15,6 +15,6 @@
   <node pkg="sss_package"
         type="geolocalization.py"
         name="geolocalization"
-        output="screen">
+        output="screen" />
 
 </launch>

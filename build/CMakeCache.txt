@@ -296,6 +296,15 @@ catkin_DIR:PATH=/opt/ros/melodic/share/catkin/cmake
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/melodic/share/cpp_common/cmake
 
+//The directory containing a CMake configuration file for cv_bridge.
+cv_bridge_DIR:PATH=/opt/ros/melodic/share/cv_bridge/cmake
+
+//Value Computed by CMake
+fls_detection_BINARY_DIR:STATIC=/home/student/catkin_ws/build/FLS/fls_detection
+
+//Value Computed by CMake
+fls_detection_SOURCE_DIR:STATIC=/home/student/catkin_ws/src/FLS/fls_detection
+
 //The directory containing a CMake configuration file for gencpp.
 gencpp_DIR:PATH=/opt/ros/melodic/share/gencpp/cmake
 
@@ -379,6 +388,12 @@ joystick_command_SOURCE_DIR:STATIC=/home/student/catkin_ws/src/joystick_command
 lib:FILEPATH=/opt/ros/melodic/lib/libxmlrpcpp.so
 
 //Value Computed by CMake
+localization_BINARY_DIR:STATIC=/home/student/catkin_ws/build/FLS/localization
+
+//Value Computed by CMake
+localization_SOURCE_DIR:STATIC=/home/student/catkin_ws/src/FLS/localization
+
+//Value Computed by CMake
 marta_msgs_BINARY_DIR:STATIC=/home/student/catkin_ws/build/marta_msgs
 
 //The directory containing a CMake configuration file for marta_msgs.
@@ -419,6 +434,12 @@ rostime_DIR:PATH=/opt/ros/melodic/share/rostime/cmake
 
 //The directory containing a CMake configuration file for sensor_msgs.
 sensor_msgs_DIR:PATH=/opt/ros/melodic/share/sensor_msgs/cmake
+
+//Value Computed by CMake
+sss_package_BINARY_DIR:STATIC=/home/student/catkin_ws/build/sss_package
+
+//Value Computed by CMake
+sss_package_SOURCE_DIR:STATIC=/home/student/catkin_ws/src/sss_package
 
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/melodic/share/std_msgs/cmake
@@ -548,7 +569,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=11
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

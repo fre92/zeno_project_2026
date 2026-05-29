@@ -17,17 +17,16 @@ sleep 3 # Diamo tempo ai nodi di inizializzarsi
 # 3. Avvia la registrazione dei dati in una nuova bag (in background)
 # Nota: La bag verrà salvata nella cartella in cui esegui run.sh
 echo "[3/4] Inizio registrazione della bag (output_mappa.bag)..."
-rosbag record -O output_mappa.bag \
+rosbag record -O BAGS/output_mappa.bag \
     /perception/target_localized_json \
     /nav_status \
-    /perception/global_map_json \
     /drivers/fls_sim/cartesian_image/compressed &
 sleep 1
 
 # 4. Riproduci la bag simulata
 # Sostituisci "localizzazione_7.bag" con il percorso effettivo della tua bag di test
 echo "[4/4] Riproduzione rosbag in corso..."
-rosbag play -r 5.0 -q BAGS/allenamento_8/allenamento_10.bag
+rosbag play -r 5.0 -q  BAGS/allenamento_10.bag
 
 # Quando la bag finisce (o premi Ctrl+C), lo script aspetta che tutto si spenga
 echo "========================================="

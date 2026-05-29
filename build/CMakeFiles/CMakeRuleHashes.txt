@@ -1,5 +1,6 @@
 # Hashes of file build rules.
 dd70aa310a14c83024e98eb294bc0f3c /home/student/catkin_ws/devel/include/joystick_command/Rel_error_joystick.h
+f511fd2cb6ce4c4651df0cffad3fe62d /home/student/catkin_ws/devel/include/marta_msgs/Altitude.h
 da324ee0fbbefe1e928f9602abb7a6b8 /home/student/catkin_ws/devel/include/marta_msgs/Distance.h
 814f6aa9237d536001e235f5c89b6e23 /home/student/catkin_ws/devel/include/marta_msgs/Euler.h
 027cd19e5b4dd4850196101fc544aa7e /home/student/catkin_ws/devel/include/marta_msgs/LatitudeLongitudeAltitude.h
@@ -12,9 +13,13 @@ c2f7748196887a5c8eddb357864d5dd7 /home/student/catkin_ws/devel/include/marta_msg
 d8b26adb1662e9129fa3b184592209eb /home/student/catkin_ws/devel/include/marta_msgs/RollPitchYaw.h
 5aac8bb7573effd125789b61172bcd2d /home/student/catkin_ws/devel/include/marta_msgs/SideScanSonar.h
 d78da8a1425aa637d0a467d549db13cd /home/student/catkin_ws/devel/include/marta_msgs/SurgeSwayHeave.h
+840d749e4446c10544b2b848f7715557 /home/student/catkin_ws/devel/include/sss_package/GeolocatedObject.h
+587ec07d032c24ef5a66e27c6ccf9e75 /home/student/catkin_ws/devel/include/sss_package/GeolocatedObjectList.h
+e73306c3bc4642eb3a39ae87d1bd5f90 /home/student/catkin_ws/devel/include/sss_package/ImageMetadata.h
 1319240a771dc449e17c418839b3d4e6 /home/student/catkin_ws/devel/include/zeno_mission/WaypointPath.h
 7f8b7e1644da7ad3fc2b7d4c4ce7a778 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/joystick_command/msg/_Rel_error_joystick.py
 e8be355028b97f5ea61683b1ac284437 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/joystick_command/msg/__init__.py
+e14936805fad93fe187cacba2c6c8a71 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Altitude.py
 33eddf5b4ebf516ea83d42e40d7ef6a9 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Distance.py
 0683b6da94ca45651e5c059b3699d72e /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Euler.py
 2d27081689aabfce54651039a7410d5b /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_LatitudeLongitudeAltitude.py
@@ -28,9 +33,14 @@ ed89b16ac52e7451c40a349ed25368c4 /home/student/catkin_ws/devel/lib/python2.7/dis
 80a94163d247da777144cfabeb3e8baa /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_SideScanSonar.py
 5fc2bd700b88009edc14d3f175e7c703 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_SurgeSwayHeave.py
 5506a53049f5f4cbd45f74db6b9b092a /home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/__init__.py
+bda133f331f58a430ce5455ebd6f95e1 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/sss_package/msg/_GeolocatedObject.py
+462d24dd111b968b2e6d243cf290a6e1 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/sss_package/msg/_GeolocatedObjectList.py
+2bf730b7c6127921f1131fe32e376e0e /home/student/catkin_ws/devel/lib/python2.7/dist-packages/sss_package/msg/_ImageMetadata.py
+fe8c81a6d9ca31fc6bf6f85e171ddbbb /home/student/catkin_ws/devel/lib/python2.7/dist-packages/sss_package/msg/__init__.py
 da1328d3a3a0bf8f8e101f2355840a3f /home/student/catkin_ws/devel/lib/python2.7/dist-packages/zeno_mission/msg/_WaypointPath.py
 411135e7903f87843e22ef49561f3821 /home/student/catkin_ws/devel/lib/python2.7/dist-packages/zeno_mission/msg/__init__.py
 7949629f1378036e340f18c5456833c9 /home/student/catkin_ws/devel/share/common-lisp/ros/joystick_command/msg/Rel_error_joystick.lisp
+52f1441dd9b18da40e3f14dc301b6a66 /home/student/catkin_ws/devel/share/common-lisp/ros/marta_msgs/msg/Altitude.lisp
 c5b938b6dd293c8dd175d6a34105cece /home/student/catkin_ws/devel/share/common-lisp/ros/marta_msgs/msg/Distance.lisp
 76f686937fdcd0e39c53b5e8a2c01b35 /home/student/catkin_ws/devel/share/common-lisp/ros/marta_msgs/msg/Euler.lisp
 b933cbc14713d1885d5a1bff64b13a29 /home/student/catkin_ws/devel/share/common-lisp/ros/marta_msgs/msg/LatitudeLongitudeAltitude.lisp
@@ -43,8 +53,12 @@ a097646ae2af9ab65101b60173e8ee01 /home/student/catkin_ws/devel/share/common-lisp
 ecd7fc6644d712adde34dcbca7a7cf06 /home/student/catkin_ws/devel/share/common-lisp/ros/marta_msgs/msg/RollPitchYaw.lisp
 550578d3f840107fbc612f9480e1d21f /home/student/catkin_ws/devel/share/common-lisp/ros/marta_msgs/msg/SideScanSonar.lisp
 a0442f0ebb448b0f4055fb21039f7aa4 /home/student/catkin_ws/devel/share/common-lisp/ros/marta_msgs/msg/SurgeSwayHeave.lisp
+906da78d86cee4d503195973cfd17f68 /home/student/catkin_ws/devel/share/common-lisp/ros/sss_package/msg/GeolocatedObject.lisp
+2f119ec62ee1b2966b63bdc86a9f411c /home/student/catkin_ws/devel/share/common-lisp/ros/sss_package/msg/GeolocatedObjectList.lisp
+b86d13d116566a09a503f3411d151e2a /home/student/catkin_ws/devel/share/common-lisp/ros/sss_package/msg/ImageMetadata.lisp
 0963de0d1b12d9624ca493f3e1c7e20e /home/student/catkin_ws/devel/share/common-lisp/ros/zeno_mission/msg/WaypointPath.lisp
 ce6d5c4283658cb2da4306966f44cb76 /home/student/catkin_ws/devel/share/gennodejs/ros/joystick_command/msg/Rel_error_joystick.js
+079348ca6a122be7d66515fd041f0faa /home/student/catkin_ws/devel/share/gennodejs/ros/marta_msgs/msg/Altitude.js
 33772f2efd5c62846eb8c95bdfbb6b0a /home/student/catkin_ws/devel/share/gennodejs/ros/marta_msgs/msg/Distance.js
 dbbd9ed99a9f8070a465690a6bc3bdca /home/student/catkin_ws/devel/share/gennodejs/ros/marta_msgs/msg/Euler.js
 28f24f1fb7a1b366ce58afbf7fd4559b /home/student/catkin_ws/devel/share/gennodejs/ros/marta_msgs/msg/LatitudeLongitudeAltitude.js
@@ -57,10 +71,14 @@ cb609f47aed2530e6422c1f2a76632f0 /home/student/catkin_ws/devel/share/gennodejs/r
 9c6d7c34f99ddeb755e568aaa636fa54 /home/student/catkin_ws/devel/share/gennodejs/ros/marta_msgs/msg/RollPitchYaw.js
 b68fe2623a391a7bf514c169e0d9fb69 /home/student/catkin_ws/devel/share/gennodejs/ros/marta_msgs/msg/SideScanSonar.js
 9abe65f80fdd9f46ac6e27110dc6910a /home/student/catkin_ws/devel/share/gennodejs/ros/marta_msgs/msg/SurgeSwayHeave.js
+cb1239d9eb2e8e605b37e15e97a5355d /home/student/catkin_ws/devel/share/gennodejs/ros/sss_package/msg/GeolocatedObject.js
+1bd4de89985bb670c3fca46f00776870 /home/student/catkin_ws/devel/share/gennodejs/ros/sss_package/msg/GeolocatedObjectList.js
+283d232e27b2b20dedab3fb046f1d93e /home/student/catkin_ws/devel/share/gennodejs/ros/sss_package/msg/ImageMetadata.js
 b625d92946c134006e343b824d5eb36a /home/student/catkin_ws/devel/share/gennodejs/ros/zeno_mission/msg/WaypointPath.js
 9eccce0ea366ca7fef38e50e5bb5d3dc /home/student/catkin_ws/devel/share/roseus/ros/joystick_command/manifest.l
 0e165747ca683c7152357a9ee132839e /home/student/catkin_ws/devel/share/roseus/ros/joystick_command/msg/Rel_error_joystick.l
 dd21554ca23983876e8b3575ae1b19c9 /home/student/catkin_ws/devel/share/roseus/ros/marta_msgs/manifest.l
+9455ed0d4bacd17218ac6f5670839deb /home/student/catkin_ws/devel/share/roseus/ros/marta_msgs/msg/Altitude.l
 fdeface02cd99ca0845e090abd402bfc /home/student/catkin_ws/devel/share/roseus/ros/marta_msgs/msg/Distance.l
 a1a50d9d26efa78df7b4d0ec2a9fe7a5 /home/student/catkin_ws/devel/share/roseus/ros/marta_msgs/msg/Euler.l
 51bcea250dd1c576d5eb8dbe0924294f /home/student/catkin_ws/devel/share/roseus/ros/marta_msgs/msg/LatitudeLongitudeAltitude.l
@@ -73,6 +91,10 @@ cb9614c0cdf5bc6fe72cc453d02e5a00 /home/student/catkin_ws/devel/share/roseus/ros/
 ba3e6f385fb476bf07374bc11a9fdcc2 /home/student/catkin_ws/devel/share/roseus/ros/marta_msgs/msg/RollPitchYaw.l
 cfba14105637b1aec38d300c868bbd73 /home/student/catkin_ws/devel/share/roseus/ros/marta_msgs/msg/SideScanSonar.l
 62cd52b16eed1e9db53943b31b764fcc /home/student/catkin_ws/devel/share/roseus/ros/marta_msgs/msg/SurgeSwayHeave.l
+e9ffcd115b34b70d21307157f5a691e1 /home/student/catkin_ws/devel/share/roseus/ros/sss_package/manifest.l
+944983649b1938bec8bec9b18e441344 /home/student/catkin_ws/devel/share/roseus/ros/sss_package/msg/GeolocatedObject.l
+ab5a83c36e4c0059b1e13059a0cd7762 /home/student/catkin_ws/devel/share/roseus/ros/sss_package/msg/GeolocatedObjectList.l
+3c70ae1a2810f5f3a9fea2be1624c575 /home/student/catkin_ws/devel/share/roseus/ros/sss_package/msg/ImageMetadata.l
 ec4100034651d5819efa2dae1747d124 /home/student/catkin_ws/devel/share/roseus/ros/zeno_mission/manifest.l
 730e6734b9d15201343d0b416a63ac56 /home/student/catkin_ws/devel/share/roseus/ros/zeno_mission/msg/WaypointPath.l
 c591a43f9ef31554886dd24784395894 CMakeFiles/clean_test_results
@@ -82,6 +104,7 @@ c591a43f9ef31554886dd24784395894 CMakeFiles/clean_test_results
 4c0f0b0d61be6853d0106a6783deac68 joystick_command/CMakeFiles/joystick_command_generate_messages_lisp
 4c0f0b0d61be6853d0106a6783deac68 joystick_command/CMakeFiles/joystick_command_generate_messages_nodejs
 4c0f0b0d61be6853d0106a6783deac68 joystick_command/CMakeFiles/joystick_command_generate_messages_py
+f678ac82df46380595321e89f2f17c6b marta_msgs/CMakeFiles/_marta_msgs_generate_messages_check_deps_Altitude
 f8e406784bcd789b9d88f6d25d7840dc marta_msgs/CMakeFiles/_marta_msgs_generate_messages_check_deps_Distance
 6369e6ea5a6898ff19d8f5c6717dc82e marta_msgs/CMakeFiles/_marta_msgs_generate_messages_check_deps_Euler
 c8e221017c47fba7ff163f3a4fd90a72 marta_msgs/CMakeFiles/_marta_msgs_generate_messages_check_deps_LatitudeLongitudeAltitude
@@ -99,6 +122,14 @@ ae1a8af416d41ed497b4d51eb682d956 marta_msgs/CMakeFiles/_marta_msgs_generate_mess
 8c96fdcb29cc90268920d62900c8eacc marta_msgs/CMakeFiles/marta_msgs_generate_messages_lisp
 8c96fdcb29cc90268920d62900c8eacc marta_msgs/CMakeFiles/marta_msgs_generate_messages_nodejs
 8c96fdcb29cc90268920d62900c8eacc marta_msgs/CMakeFiles/marta_msgs_generate_messages_py
+59deb4601f49ffc560fe56fcf4cfc0f6 sss_package/CMakeFiles/_sss_package_generate_messages_check_deps_GeolocatedObject
+5c6025784612f0a9602c2b37255dd837 sss_package/CMakeFiles/_sss_package_generate_messages_check_deps_GeolocatedObjectList
+ae8957b26be9ff45bf2863deda9d3d1a sss_package/CMakeFiles/_sss_package_generate_messages_check_deps_ImageMetadata
+a910d36aab0ca95927f810084779591e sss_package/CMakeFiles/sss_package_generate_messages_cpp
+a910d36aab0ca95927f810084779591e sss_package/CMakeFiles/sss_package_generate_messages_eus
+a910d36aab0ca95927f810084779591e sss_package/CMakeFiles/sss_package_generate_messages_lisp
+a910d36aab0ca95927f810084779591e sss_package/CMakeFiles/sss_package_generate_messages_nodejs
+a910d36aab0ca95927f810084779591e sss_package/CMakeFiles/sss_package_generate_messages_py
 37dc085d8e907d2c106720a86a3e09bb zeno_mission/CMakeFiles/_zeno_mission_generate_messages_check_deps_WaypointPath
 2c33823d7926093d6cb755b6cdf6ca87 zeno_mission/CMakeFiles/zeno_mission_generate_messages_cpp
 2c33823d7926093d6cb755b6cdf6ca87 zeno_mission/CMakeFiles/zeno_mission_generate_messages_eus

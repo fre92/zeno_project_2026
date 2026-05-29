@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/marta_msgs_generate_messages_py"
   "/home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Euler.py"
   "/home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Position.py"
+  "/home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Altitude.py"
   "/home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Distance.py"
   "/home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_RollPitchYaw.py"
   "/home/student/catkin_ws/devel/lib/python2.7/dist-packages/marta_msgs/msg/_Quaternion.py"
